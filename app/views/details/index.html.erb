@@ -1,45 +1,130 @@
-<h1>Listing details</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template &middot; Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Url</th>
-    <th>Addr1</th>
-    <th>Addr2</th>
-    <th>Addr3</th>
-    <th>Addr4</th>
-    <th>Postcode</th>
-    <th>Blurb1</th>
-    <th>Blurb2</th>
-    <th>Contactname</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
 
-<% @details.each do |detail| %>
-  <tr>
-    <td><%= detail.name %></td>
-    <td><%= detail.phone %></td>
-    <td><%= detail.email %></td>
-    <td><%= detail.url %></td>
-    <td><%= detail.addr1 %></td>
-    <td><%= detail.addr2 %></td>
-    <td><%= detail.addr3 %></td>
-    <td><%= detail.addr4 %></td>
-    <td><%= detail.postcode %></td>
-    <td><%= detail.blurb1 %></td>
-    <td><%= detail.blurb2 %></td>
-    <td><%= detail.contactname %></td>
-    <td><%= link_to 'Show', detail %></td>
-    <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
-    <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
 
-<br />
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
 
-<%= link_to 'New Detail', new_detail_path %>
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+         	 <li><%= link_to "Home", :home %></li>
+	          <li class="active"><%= link_to "About", :about %></li>
+	    		<li><%= link_to "People", teams_path %></li> 
+					<li><%= link_to "Products", teams_path %></li> 
+		
+
+        </ul>
+        <h3 class="muted">J. Jones & Son (Dairies) Ltd</h3>
+      </div>
+   
+      <hr>
+
+
+	<% @details.each do |detail| %>
+
+	<br />	
+	<div class="container">
+	      <div class="row-fluid">
+	         <div class="span8">
+	            <div class="list">
+	               <!-- Add your phone number here -->
+	               <div class="phone">
+	                  <i class="icon-phone"></i>Phone:<b> <%= detail.phone %></b>
+	               </div>
+	               <hr />
+	               <!-- Add your email id here -->
+	               <div class="email">
+	                  <i class="icon-envelope"></i> Email:<b> contact@jjonesdairies.com</b>
+	               </div>
+	               <hr />
+	               <!-- Add your address here -->
+	               <div class="address">
+	                  <i class="icon-home"></i> Address: <b>Dock View Road, Barry, Vale of Glamorgan, CF63 4JP, UK</b>
+	               </div>
+				  <hr />
+				 <!-- Add your website here -->
+	               <div class="website">
+	                  <i class="icon-home"></i> Website: <b> <%= detail.url %></b>
+	               </div>	  
+				<hr />
+				 <!-- Add your blurb here -->
+	               <div class="blurb">
+	                <i class="icon-star-empty"> </i> Blurb1: <b> <%= detail.blurb1 %></b>
+	               </div>	  
+				<hr />
+							 <!-- Add your contact name here -->
+				               <div class="contactname">
+				               <i class="icon-user">   </i> Contact: <b> <%= detail.contactname %></b>
+				               </div>	  
+							<hr />
+				
+	            </div>
+	         </div>
+	      </div>
+	<% end%>
+	   </div>
+
+		
+	<%= link_to 'New Detail', new_detail_path %>
+	 
+	

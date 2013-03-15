@@ -5,8 +5,11 @@ JJones::Application.routes.draw do
 
   resources :teams
 
-
   resources :details
+  
+    match '/' => "Static_Pages#home", :as => :home
+
+  match '/about',   to: 'static_pages#about'
 
 
   # The priority is based upon order of creation:

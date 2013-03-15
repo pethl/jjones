@@ -1,0 +1,45 @@
+<h1>Listing details</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Url</th>
+    <th>Addr1</th>
+    <th>Addr2</th>
+    <th>Addr3</th>
+    <th>Addr4</th>
+    <th>Postcode</th>
+    <th>Blurb1</th>
+    <th>Blurb2</th>
+    <th>Contactname</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @details.each do |detail| %>
+  <tr>
+    <td><%= detail.name %></td>
+    <td><%= detail.phone %></td>
+    <td><%= detail.email %></td>
+    <td><%= detail.url %></td>
+    <td><%= detail.addr1 %></td>
+    <td><%= detail.addr2 %></td>
+    <td><%= detail.addr3 %></td>
+    <td><%= detail.addr4 %></td>
+    <td><%= detail.postcode %></td>
+    <td><%= detail.blurb1 %></td>
+    <td><%= detail.blurb2 %></td>
+    <td><%= detail.contactname %></td>
+    <td><%= link_to 'Show', detail %></td>
+    <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
+    <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Detail', new_detail_path %>
