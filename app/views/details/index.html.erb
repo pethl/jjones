@@ -1,46 +1,48 @@
   <%= render 'details/header' %>
 <br>
-
 	<% @details.each do |detail| %>
+<br />	
 
-	<br />	
 	<div class="container">
 	      <div class="row-fluid">
 	         <div class="span8">
 	            <div class="list">
-	               <div class="phone">
-	                  <img src="/images/glyphicons_169_phone.png" alt="8" /><i class="icon-phone"></i>Phone:<b> <%= detail.phone %></b>
-	               </div>
-	               <hr />
-	               <div class="email">
-	                  <i class="icon-envelope"></i> Email:<b> <%= detail.email %></b>
-	               </div>
-	               <hr />
-	               <div class="address">
-	                  <i class="icon-home"></i> Address: <b><%= detail.addr1 %>, <%= detail.addr2 %>, <%= detail.addr3 %>, <%= detail.postcode %></b>
-	               </div>
-				  <hr />
-	               <div class="website">
-	                  <i class="icon-arrow-right"></i> Website: <b><%= detail.url %></b>
-	               </div>	  
-				<hr />
-	               <div class="blurb">
-	                <i class="icon-star-empty"> </i> About Us: <b> <%= detail.blurb1 %></b>
-	               </div>	  
-				<hr />
-				   <div class="contactname">
-				     <i class="icon-user">   </i> Contact: <b> <%= detail.contactname %></b>
-				   </div>	  
-				<hr />
-	            </div>
-	         </div>
-	      </div>
+
+		<table class="table">
+			<tr>
+				<td><center><img src="/images/glyphicons_169_phone.png" alt="8" /> Phone: </td>
+				<td><b><%= detail.phone %></td>
+			</tr>
+			<tr>
+				<td><center><i class="icon-envelope"></i> Email: </td>
+				<td><b><%= detail.email %></td>
+			</tr>
+			<tr>
+				<td><center><i class="icon-home"></i> Address: </td>
+				<td><b><%= detail.addr1 %>, <%= detail.addr2 %>, <%= detail.addr3 %>, <%= detail.postcode %></b></td>	
+			</tr>
+			<tr>
+				<td><center><i class="icon-arrow-right"></i> Website: </td>
+				<td><b><%= detail.url %></td>
+			</tr>
+			<tr>
+				<td><center><i class="icon-star-empty"></i> About Us:</td>
+				<td><b><%= detail.blurb1 %></td>	
+			</tr>
+			<tr>	
+				<td><center><i class="icon-user"></i> Contact: </td>
+				<td><b><%= detail.contactname %></td>
+			</tr>
+			</table>
 	<% end%>
-	   </div>
+	<div>
+		<div>
+			<div>
+				<div>
+	
 	<br>
 	<p>
 	  <button class="btn btn-small" type="button"><%= link_to 'Edit Details', edit_detail_path(@details) %></button>
-
 	</p>
 		
 	 

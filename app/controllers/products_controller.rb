@@ -1,8 +1,13 @@
 class ProductsController < ApplicationController
+
+
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products =   Product.all
+     @product_groups = @products.group_by { |t| t.group }  
+
+
 
     respond_to do |format|
       format.html # index.html.erb
