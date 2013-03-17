@@ -1,3 +1,5 @@
+<div class="well">
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -10,28 +12,29 @@
       </ul>
     </div>
   <% end %>
-
+<div class="row-fluid">
+  <div class="offset1">
   <div class="field">
-    <%= f.label :group %><br />
+    <%= f.label :group %>
     <%= f.text_field :group %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :size %><br />
+    <%= f.label :size %>
     <%= f.text_field :size %>
   </div>
   <div class="field">
-    <%= f.label :unitprice %><br />
+    <%= f.label :unitprice %>
     <%= f.number_field :unitprice %>
   </div>
   <div class="field">
-    <%= f.label :itemcount %><br />
+    <%= f.label :itemcount %>
     <%= f.number_field :itemcount %>
   </div>
   <div class="actions">
     <%= f.submit %>
-  </div>
-<% end %>
+  </div></div></div>
+</div><% end %>
