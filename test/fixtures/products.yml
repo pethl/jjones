@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group: MyString
+  name: MyString
+  size: MyString
+  unitprice: 1
+  itemcount: 1
+
+two:
+  group: MyString
+  name: MyString
+  size: MyString
+  unitprice: 1
+  itemcount: 1

@@ -1,0 +1,32 @@
+
+    <%= render 'products/header' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Group:</b>
+  <%= @product.group %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @product.size %>
+</p>
+
+<p>
+  <b>Unitprice:</b>
+  <%= @product.unitprice %>
+</p>
+
+<p>
+  <b>Itemcount:</b>
+  <%= @product.itemcount %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
