@@ -1,4 +1,7 @@
 JJones::Application.routes.draw do
+  resources :faqs
+
+
   resources :products
 
 

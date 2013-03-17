@@ -1,0 +1,19 @@
+    <%= render 'faqs/header' %>
+
+<% @faqs.each do |faq| %>
+
+<h3>    <%= faq.title %></h3>
+<%= faq.body %>    <br>
+<i><font color="dk-blue"> Date added: <%= faq.date.strftime("%d %B, %Y") %></i></font><br>
+  <h5 class="muted"> <%= link_to 'Show', faq %>
+    <%= link_to 'Edit', edit_faq_path(faq) %>
+    <%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+  </br>
+</br>
+<% end %>
+
+<br />
+<p>
+  <button class="btn btn-small" type="button"><%= link_to 'New FAQ', new_faq_path %></button>
+</p>
+

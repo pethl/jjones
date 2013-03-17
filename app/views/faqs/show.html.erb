@@ -1,0 +1,26 @@
+    <%= render 'faqs/header' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @faq.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @faq.date %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @faq.body %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @faq.keywords %>
+</p>
+
+
+<%= link_to 'Edit', edit_faq_path(@faq) %> |
+<%= link_to 'Back', faqs_path %>
